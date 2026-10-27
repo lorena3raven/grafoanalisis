@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { @apply bg-ink font-sans text-cream antialiased; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-3 rounded-sm bg-gradient-to-b from-amber to-gold px-7 py-3.5 text-xs font-bold uppercase tracking-wide text-ink transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber; }
+  .eyebrow { @apply text-[11px] font-semibold uppercase tracking-[0.25em] text-gold; }
+  .h2 { @apply font-serif text-3xl font-semibold uppercase leading-tight md:text-4xl; }
+  .section { @apply border-t border-gold/20 px-6 py-16 md:px-10; }
+  .wrap { @apply mx-auto max-w-6xl; }
+  /* Placeholder visual: troque por <img> / background-image reais */
+  .photo { @apply bg-gradient-to-br from-[#3a2514] via-[#1b120c] to-ink; }
+}
+
+/* Estilização da Barra de Rolagem Horizontal dos Depoimentos */
+.custom-scrollbar-horizontal::-webkit-scrollbar {
+  height: 6px;
+}
+.custom-scrollbar-horizontal::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+.custom-scrollbar-horizontal::-webkit-scrollbar-thumb {
+  background: rgba(232, 147, 74, 0.5); /* Cor gold */
+  border-radius: 10px;
+}
+.custom-scrollbar-horizontal::-webkit-scrollbar-thumb:hover {
+  background: rgba(232, 147, 74, 1); /* Cor gold forte */
+}
